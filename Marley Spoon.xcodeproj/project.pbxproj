@@ -135,6 +135,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B273DD26E4B9FD00F7BBB2 /* Build configuration list for PBXNativeTarget "Marley Spoon" */;
 			buildPhases = (
+				13B273E626E4BA6300F7BBB2 /* ShellScript */,
 				13B273AF26E4B9FA00F7BBB2 /* Sources */,
 				13B273B026E4B9FA00F7BBB2 /* Frameworks */,
 				13B273B126E4B9FA00F7BBB2 /* Resources */,
@@ -252,6 +253,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13B273E626E4BA6300F7BBB2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --fix\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		13B273AF26E4B9FA00F7BBB2 /* Sources */ = {
