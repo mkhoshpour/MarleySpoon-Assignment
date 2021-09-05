@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AE174B2D4C4B1A436A2799A /* Pods_Marley_Spoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC22FF32553E493B6E1FAAB7 /* Pods_Marley_Spoon.framework */; };
 		13B273B726E4B9FA00F7BBB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B273B626E4B9FA00F7BBB2 /* AppDelegate.swift */; };
 		13B273B926E4B9FA00F7BBB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B273B826E4B9FA00F7BBB2 /* SceneDelegate.swift */; };
 		13B273BB26E4B9FA00F7BBB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B273BA26E4B9FA00F7BBB2 /* ViewController.swift */; };
@@ -15,6 +16,10 @@
 		13B273C326E4B9FC00F7BBB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B273C126E4B9FC00F7BBB2 /* LaunchScreen.storyboard */; };
 		13B273CE26E4B9FC00F7BBB2 /* Marley_SpoonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B273CD26E4B9FC00F7BBB2 /* Marley_SpoonTests.swift */; };
 		13B273D926E4B9FD00F7BBB2 /* Marley_SpoonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B273D826E4B9FD00F7BBB2 /* Marley_SpoonUITests.swift */; };
+		13B273E926E4BC3700F7BBB2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B273E826E4BC3700F7BBB2 /* Service.swift */; };
+		13B273EC26E4C05B00F7BBB2 /* Chef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B273EB26E4C05B00F7BBB2 /* Chef.swift */; };
+		13B273EE26E4C0AA00F7BBB2 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B273ED26E4C0AA00F7BBB2 /* Recipe.swift */; };
+		13B273F026E4C0D800F7BBB2 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B273EF26E4C0D800F7BBB2 /* Tag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,13 @@
 		13B273D426E4B9FD00F7BBB2 /* Marley SpoonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Marley SpoonUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B273D826E4B9FD00F7BBB2 /* Marley_SpoonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marley_SpoonUITests.swift; sourceTree = "<group>"; };
 		13B273DA26E4B9FD00F7BBB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13B273E826E4BC3700F7BBB2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		13B273EB26E4C05B00F7BBB2 /* Chef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chef.swift; sourceTree = "<group>"; };
+		13B273ED26E4C0AA00F7BBB2 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		13B273EF26E4C0D800F7BBB2 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		3F51721F29D486E48E4AD2E6 /* Pods-Marley Spoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marley Spoon.debug.xcconfig"; path = "Target Support Files/Pods-Marley Spoon/Pods-Marley Spoon.debug.xcconfig"; sourceTree = "<group>"; };
+		553358D1AE00EDF2CBD60764 /* Pods-Marley Spoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marley Spoon.release.xcconfig"; path = "Target Support Files/Pods-Marley Spoon/Pods-Marley Spoon.release.xcconfig"; sourceTree = "<group>"; };
+		CC22FF32553E493B6E1FAAB7 /* Pods_Marley_Spoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marley_Spoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE174B2D4C4B1A436A2799A /* Pods_Marley_Spoon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0267EBD40CA5E50A36CD3BD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC22FF32553E493B6E1FAAB7 /* Pods_Marley_Spoon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		13B273AA26E4B9FA00F7BBB2 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +104,8 @@
 				13B273CC26E4B9FC00F7BBB2 /* Marley SpoonTests */,
 				13B273D726E4B9FD00F7BBB2 /* Marley SpoonUITests */,
 				13B273B426E4B9FA00F7BBB2 /* Products */,
+				4F30BB8412B54762D7AF181B /* Pods */,
+				0267EBD40CA5E50A36CD3BD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +122,9 @@
 		13B273B526E4B9FA00F7BBB2 /* Marley Spoon */ = {
 			isa = PBXGroup;
 			children = (
+				13B273F126E4DDBB00F7BBB2 /* View */,
+				13B273EA26E4C05100F7BBB2 /* Model */,
+				13B273E726E4BC1400F7BBB2 /* Helpers */,
 				13B273B626E4B9FA00F7BBB2 /* AppDelegate.swift */,
 				13B273B826E4B9FA00F7BBB2 /* SceneDelegate.swift */,
 				13B273BA26E4B9FA00F7BBB2 /* ViewController.swift */,
@@ -128,6 +154,40 @@
 			path = "Marley SpoonUITests";
 			sourceTree = "<group>";
 		};
+		13B273E726E4BC1400F7BBB2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				13B273E826E4BC3700F7BBB2 /* Service.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		13B273EA26E4C05100F7BBB2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13B273EB26E4C05B00F7BBB2 /* Chef.swift */,
+				13B273ED26E4C0AA00F7BBB2 /* Recipe.swift */,
+				13B273EF26E4C0D800F7BBB2 /* Tag.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13B273F126E4DDBB00F7BBB2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4F30BB8412B54762D7AF181B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F51721F29D486E48E4AD2E6 /* Pods-Marley Spoon.debug.xcconfig */,
+				553358D1AE00EDF2CBD60764 /* Pods-Marley Spoon.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,10 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B273DD26E4B9FD00F7BBB2 /* Build configuration list for PBXNativeTarget "Marley Spoon" */;
 			buildPhases = (
+				A952328414B82986730762CF /* [CP] Check Pods Manifest.lock */,
 				13B273E626E4BA6300F7BBB2 /* ShellScript */,
 				13B273AF26E4B9FA00F7BBB2 /* Sources */,
 				13B273B026E4B9FA00F7BBB2 /* Frameworks */,
 				13B273B126E4B9FA00F7BBB2 /* Resources */,
+				23730523E92D90E264F1DBB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,6 +334,45 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --fix\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		23730523E92D90E264F1DBB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marley Spoon/Pods-Marley Spoon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marley Spoon/Pods-Marley Spoon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Marley Spoon/Pods-Marley Spoon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A952328414B82986730762CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Marley Spoon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -280,7 +381,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B273BB26E4B9FA00F7BBB2 /* ViewController.swift in Sources */,
+				13B273E926E4BC3700F7BBB2 /* Service.swift in Sources */,
 				13B273B726E4B9FA00F7BBB2 /* AppDelegate.swift in Sources */,
+				13B273F026E4C0D800F7BBB2 /* Tag.swift in Sources */,
+				13B273EE26E4C0AA00F7BBB2 /* Recipe.swift in Sources */,
+				13B273EC26E4C05B00F7BBB2 /* Chef.swift in Sources */,
 				13B273B926E4B9FA00F7BBB2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +559,7 @@
 		};
 		13B273DE26E4B9FD00F7BBB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F51721F29D486E48E4AD2E6 /* Pods-Marley Spoon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -473,6 +579,7 @@
 		};
 		13B273DF26E4B9FD00F7BBB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 553358D1AE00EDF2CBD60764 /* Pods-Marley Spoon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

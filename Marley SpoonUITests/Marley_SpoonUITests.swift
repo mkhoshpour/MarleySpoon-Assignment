@@ -7,7 +7,7 @@
 
 import XCTest
 
-class Marley_SpoonUITests: XCTestCase {
+class MarleySpoonUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
