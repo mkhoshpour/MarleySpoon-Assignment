@@ -20,6 +20,7 @@ class RecipeListViewController: UIViewController {
 
     // MARK: - Variables
     var recipes: [Recipe]?
+    let recipesViewModel = RecipeListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,20 +37,22 @@ class RecipeListViewController: UIViewController {
     private func setupBindings() {
 
         // Subscribe to Loading
-        apartmentsViewModel.loading = { [weak self] isLoading in
+        recipesViewModel.loading = { [weak self] isLoading in
             guard let self = self else { return }
             isLoading ? self.loading.startAnimating() : self.loading.stopAnimating()
         }
 
         // Subscribe to apartments
-        apartmentsViewModel.apartments = { [weak self] apartments in
+        recipesViewModel.recipesLoaded = { [weak self] recipes in
             guard let self = self else { return }
             // Add new apartments to tableView dataSource.
-            self.apartmentsTableViewDataSource.refreshWithNewItems(apartments)
+            self.recipes = recipes
+            self.tableView.reloadData()
         }
 
         // Subscribe to errors
-        apartmentsViewModel.errorHandler = { [weak self] error in
+        recipesViewModel
+            .errorHandler = { [weak self] error in
             guard let self = self else { return }
             self.showAlertWith(error, title: "Error", completion: nil)
         }
@@ -64,9 +67,10 @@ extension RecipeListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: String.init(describing: RecipeCell.self)) {
-            let recipe = recipes[indexPath.row]
-            
+        if let cell = tableView.dequeueReusableCell(withIdentifier: String.init(describing: RecipeCell.self)) as? RecipeCell {
+            if let recipe = recipes?[indexPath.row] {
+                cell.configureCellWith(recipe)
+            }
             return cell
         } else {
             return UITableViewCell()

@@ -23,7 +23,18 @@ class RecipeCell: UITableViewCell {
 
     func configureCellWith(_ item: Recipe) {
         labelRecipeName.text = item.title
-        imageViewRecipe.image = item.photo?.urlString
+        if let url = item.photo?.url {
+            Service.loadImage(url: url) {[weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let image):
+                    self.imageViewRecipe.image = image
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

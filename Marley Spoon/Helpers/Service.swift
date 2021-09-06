@@ -7,6 +7,7 @@
 
 import Foundation
 import Contentful
+import Kingfisher
 
 typealias RecipesResult = (Result<[Recipe], Error>) -> Void
 typealias ImageResult = (Result<UIImage, Error>) -> Void
@@ -31,8 +32,17 @@ class Service: NSObject {
         }
     }
 
-
-    static func loadImage(url: URL, result: @escaping ImageResult){
-
+    static func loadImage(url: URL, result: @escaping ImageResult) {
+        KF.url(url)
+            //          .placeholder(placeholderImage)
+            .loadDiskFileSynchronously()
+            .cacheMemoryOnly()
+            .fade(duration: 0.25)
+            .onSuccess { data in
+                print(data)
+            }
+            .onFailure { error in
+                print(error)
+            }
     }
 }
