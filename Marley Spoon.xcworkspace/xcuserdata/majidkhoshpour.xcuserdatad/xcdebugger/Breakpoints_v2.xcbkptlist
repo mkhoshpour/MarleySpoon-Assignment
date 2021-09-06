@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0B121F31-D22E-4CA8-8267-B853418B92F7"
+            uuid = "69AC83BD-0351-4427-BB45-ECED600E06A1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Marley Spoon/Helpers/Service.swift"
+            filePath = "Marley Spoon/RecipeList/View/Cell/RecipeCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "loadImage(url:result:)"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "configureCellWith(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75C73AC9-7491-4C63-8234-DD49453843B5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Marley Spoon/RecipeList/View/Cell/RecipeCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "configureCellWith(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

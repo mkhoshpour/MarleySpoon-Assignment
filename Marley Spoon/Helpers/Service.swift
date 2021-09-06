@@ -33,16 +33,21 @@ class Service: NSObject {
     }
 
     static func loadImage(url: URL, result: @escaping ImageResult) {
+        // KingFisher needs imageView to set image to, but we only need image
+
         KF.url(url)
-            //          .placeholder(placeholderImage)
+            //.placeholder(placeholderImage)
             .loadDiskFileSynchronously()
             .cacheMemoryOnly()
             .fade(duration: 0.25)
             .onSuccess { data in
-                print(data)
+                if let image = data.image.imageAsset?.image(with: .current) {
+                    result(.success(image))
+                }
             }
             .onFailure { error in
                 print(error)
             }
+            .set(to: UIImageView())
     }
 }

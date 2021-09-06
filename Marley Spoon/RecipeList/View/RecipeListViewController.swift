@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecipeListViewController: UIViewController {
+class RecipeListViewController: UIViewController, Storyboarded {
 
     // MARK: - UI Properties
     @IBOutlet weak var tableView: UITableView!
@@ -18,19 +18,23 @@ class RecipeListViewController: UIViewController {
     }
     var cellHeight: CGFloat = 231
 
+    weak var coordinator: AppCoordinator?
+
     // MARK: - Variables
     var recipes: [Recipe]?
     let recipesViewModel = RecipeListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupView()
+        setupBindings()
+        recipesViewModel.getRecipes()
         // Do any additional setup after loading the view.
     }
 
     // MARK: - Customizing View
     func setupView() {
-
+        self.tableView.registerCell(type: RecipeCell.self)
     }
 
     // MARK: - Bindings
@@ -39,7 +43,9 @@ class RecipeListViewController: UIViewController {
         // Subscribe to Loading
         recipesViewModel.loading = { [weak self] isLoading in
             guard let self = self else { return }
-            isLoading ? self.loading.startAnimating() : self.loading.stopAnimating()
+            DispatchQueue.main.async {
+                isLoading ? self.loading.startAnimating() : self.loading.stopAnimating()
+            }
         }
 
         // Subscribe to apartments
@@ -47,7 +53,9 @@ class RecipeListViewController: UIViewController {
             guard let self = self else { return }
             // Add new apartments to tableView dataSource.
             self.recipes = recipes
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
 
         // Subscribe to errors
@@ -67,7 +75,7 @@ extension RecipeListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: String.init(describing: RecipeCell.self)) as? RecipeCell {
+        if let cell = tableView.dequeueCell(withType: RecipeCell.self) as? RecipeCell {
             if let recipe = recipes?[indexPath.row] {
                 cell.configureCellWith(recipe)
             }
