@@ -9,6 +9,7 @@ import Foundation
 import Contentful
 
 typealias RecipesResult = (Result<[Recipe], Error>) -> Void
+typealias ImageResult = (Result<UIImage, Error>) -> Void
 
 class Service: NSObject {
 
@@ -28,5 +29,10 @@ class Service: NSObject {
                 result(.failure(error))
             }
         }
+    }
+
+
+    static func loadImage(url: URL, result: @escaping ImageResult){
+
     }
 }
