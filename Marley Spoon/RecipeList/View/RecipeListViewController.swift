@@ -16,7 +16,7 @@ class RecipeListViewController: UIViewController, Storyboarded {
             loading.hidesWhenStopped = true
         }
     }
-    var cellHeight: CGFloat = 231
+    var cellHeight: CGFloat = 343
 
     // MARK: - Variables
     var recipes: [Recipe]?
@@ -37,6 +37,7 @@ class RecipeListViewController: UIViewController, Storyboarded {
         // This will remove extra separators from tableview
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.accessibilityLabel = "mainTable"
+        self.title = "Recipes"
     }
 
     // MARK: - Bindings

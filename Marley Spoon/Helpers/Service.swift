@@ -50,7 +50,7 @@ class Service: NSObject {
         // KingFisher needs imageView to set image to, but we only need image
 
         KF.url(url)
-            // .placeholder(placeholderImage)
+            .placeholder(UIImage(named: "foodPlaceholder"))
             .loadDiskFileSynchronously()
             .cacheMemoryOnly()
             .fade(duration: 0.25)
