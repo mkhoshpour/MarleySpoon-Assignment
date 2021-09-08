@@ -10,6 +10,7 @@ import Contentful
 import Kingfisher
 
 typealias RecipesResult = (Result<[Recipe], Error>) -> Void
+typealias SingleRecipeResult = (Result<Recipe, Error>) -> Void
 typealias ImageResult = (Result<UIImage, Error>) -> Void
 
 class Service: NSObject {
@@ -20,7 +21,7 @@ class Service: NSObject {
 
     static func fetchRecipes(result : @escaping RecipesResult) {
         let query = QueryOn<Recipe>.where(contentTypeId: "recipe")
-        Service.client.fetchArray(of: Recipe.self, matching: query) {(response: Result<HomogeneousArrayResponse<Recipe>, Error  >) in
+        Service.client.fetchArray(of: Recipe.self, matching: query) {(response: Result<HomogeneousArrayResponse<Recipe>, Error>) in
             switch response {
             case .success(let entry):
                 print(entry)
@@ -32,11 +33,24 @@ class Service: NSObject {
         }
     }
 
+    static func fetchRecipes(id: String, result : @escaping SingleRecipeResult) {
+        Service.client.fetch(Recipe.self, id: id) { (response: Result<Recipe, Error>) in
+            switch response {
+            case .success(let entry):
+                print(entry)
+                result(.success(entry))
+            case .failure(let error):
+                print("Error \(error)!")
+                result(.failure(error))
+            }
+        }
+    }
+
     static func loadImage(url: URL, result: @escaping ImageResult) {
         // KingFisher needs imageView to set image to, but we only need image
 
         KF.url(url)
-            //.placeholder(placeholderImage)
+            // .placeholder(placeholderImage)
             .loadDiskFileSynchronously()
             .cacheMemoryOnly()
             .fade(duration: 0.25)

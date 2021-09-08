@@ -30,4 +30,10 @@ final class AppCoordinator: NSObject {
         let recipeListViewController = RecipeListViewController.instantiate(coordinator: self)
         navigationController.pushViewController(recipeListViewController, animated: true)
     }
+
+    func navigateToDetailView(_ recipe: Recipe) {
+        let detailViewController = RecipeDetailViewController.instantiate(coordinator: self)
+        detailViewController.recipeViewModel.recipe = recipe
+        navigationController.pushViewController(detailViewController, animated: true)
+    }
 }

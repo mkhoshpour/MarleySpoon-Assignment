@@ -18,11 +18,10 @@ class RecipeListViewController: UIViewController, Storyboarded {
     }
     var cellHeight: CGFloat = 231
 
-    weak var coordinator: AppCoordinator?
-
     // MARK: - Variables
     var recipes: [Recipe]?
     let recipesViewModel = RecipeListViewModel()
+    weak var coordinator: AppCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +34,8 @@ class RecipeListViewController: UIViewController, Storyboarded {
     // MARK: - Customizing View
     func setupView() {
         self.tableView.registerCell(type: RecipeCell.self)
+        // This will remove extra separators from tableview
+        self.tableView.tableFooterView = UIView(frame: .zero)
     }
 
     // MARK: - Bindings
@@ -91,5 +92,12 @@ extension RecipeListViewController: UITableViewDataSource {
 extension RecipeListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeight
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let recipe = recipes?[indexPath.row] {
+            self.coordinator?.navigateToDetailView(recipe)
+        }
+
     }
 }

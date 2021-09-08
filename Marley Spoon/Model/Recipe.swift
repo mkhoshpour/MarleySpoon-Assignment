@@ -67,7 +67,7 @@ public final class Recipe: EntryDecodable, FieldKeysQueryable, Identifiable {
     }
 
     public enum FieldKeys: String, CodingKey {
-        case title, description, tags, chef, photo, calories, name
+        case title, description, tags, chef, photo, calories, name, id
     }
 
     func getAllRecipes(result : @escaping RecipesResult) {
