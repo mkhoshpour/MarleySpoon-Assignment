@@ -33,9 +33,10 @@ class RecipeListViewController: UIViewController, Storyboarded {
 
     // MARK: - Customizing View
     func setupView() {
-        self.tableView.registerCell(type: RecipeCell.self)
+        tableView.registerCell(type: RecipeCell.self)
         // This will remove extra separators from tableview
-        self.tableView.tableFooterView = UIView(frame: .zero)
+        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.accessibilityLabel = "mainTable"
     }
 
     // MARK: - Bindings

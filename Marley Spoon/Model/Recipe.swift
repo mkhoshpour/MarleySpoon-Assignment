@@ -40,6 +40,22 @@ public final class Recipe: EntryDecodable, FieldKeysQueryable, Identifiable {
         self.updatedAt = Date()
     }
 
+    // for creating mock object
+    public init(id: String) {
+
+        self.id = id
+
+        self.title = "title"
+        self.description = ""
+        self.calories = 0
+        self.chef = Chef(name: "")
+        self.tags = [Tag(name: "")]
+        self.localeCode = "en-US"
+        self.createdAt = Date()
+        self.updatedAt = Date()
+
+    }
+
     public required init(from decoder: Decoder) throws {
         let sys = try decoder.sys()
         id = sys.id

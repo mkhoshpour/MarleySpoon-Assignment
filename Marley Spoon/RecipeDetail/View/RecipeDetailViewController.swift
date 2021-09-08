@@ -45,10 +45,12 @@ class RecipeDetailViewController: UIViewController, Storyboarded {
         // Chef View
         viewChef.layer.cornerRadius = 15
         viewChef?.layer.masksToBounds = true
+
     }
 
     func setData() {
         labelTitle.text = recipe?.title
+        labelTitle.accessibilityValue = "titleLabel"
         labelDescription.text = recipe?.description
         if let chefName = recipe?.chef?.name {
             labelChefName.text = chefName

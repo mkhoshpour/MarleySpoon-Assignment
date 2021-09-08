@@ -18,9 +18,34 @@ class MarleySpoonTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testRecipeListFetch() throws {
+        let listViewModel = RecipeListViewModel()
+        listViewModel.getRecipes()
+        let expectation = XCTestExpectation(description: "Async get recipes")
+        listViewModel.recipesLoaded = { [weak self] resipes in
+            guard let _ = self else { return }
+            expectation.fulfill()
+            XCTAssertGreaterThan(resipes.count, 0)
+        }
+        wait(for: [expectation], timeout: 5)
+    }
+
+    func testSingleRecipeFetch(_ id: String = "4dT8tcb6ukGSIg2YyuGEOm") throws {
+        let detailViewModel = RecipeDetailViewModel()
+
+        // here we create a mock object with a specific id, we can assume that this id is always available in our moch server
+        let recipe = Recipe(id: id)
+        detailViewModel.recipe = recipe
+
+        detailViewModel.getRecipe()
+        let expectation = XCTestExpectation(description: "Async get recipe")
+        detailViewModel.recipeLoaded = { [weak self] resipe in
+            guard let _ = self else { return }
+            expectation.fulfill()
+            // test if this recipe has title (we assume that all recipes have titles)
+            XCTAssertGreaterThan(resipe.title?.count ?? 0, 0)
+        }
+        wait(for: [expectation], timeout: 5)
     }
 
     func testPerformanceExample() throws {
