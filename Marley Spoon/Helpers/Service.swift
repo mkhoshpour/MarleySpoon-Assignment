@@ -13,7 +13,7 @@ typealias RecipesResult = (Result<[Recipe], Error>) -> Void
 typealias SingleRecipeResult = (Result<Recipe, Error>) -> Void
 typealias ImageResult = (Result<UIImage, Error>) -> Void
 
-class Service: NSObject {
+class RecipeService: NSObject {
 
     static let client = Client(spaceId: "kk2bw5ojx476",
                         accessToken: "7ac531648a1b5e1dab6c18b0979f822a5aad0fe5f1109829b8a197eb2be4b84c",
@@ -21,7 +21,7 @@ class Service: NSObject {
 
     static func fetchRecipes(result : @escaping RecipesResult) {
         let query = QueryOn<Recipe>.where(contentTypeId: "recipe")
-        Service.client.fetchArray(of: Recipe.self, matching: query) {(response: Result<HomogeneousArrayResponse<Recipe>, Error>) in
+        RecipeService.client.fetchArray(of: Recipe.self, matching: query) {(response: Result<HomogeneousArrayResponse<Recipe>, Error>) in
             switch response {
             case .success(let entry):
                 print(entry)
@@ -34,7 +34,7 @@ class Service: NSObject {
     }
 
     static func fetchRecipes(id: String, result : @escaping SingleRecipeResult) {
-        Service.client.fetch(Recipe.self, id: id) { (response: Result<Recipe, Error>) in
+        RecipeService.client.fetch(Recipe.self, id: id) { (response: Result<Recipe, Error>) in
             switch response {
             case .success(let entry):
                 print(entry)

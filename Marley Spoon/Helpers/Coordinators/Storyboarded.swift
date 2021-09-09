@@ -41,10 +41,7 @@ extension Storyboarded where Self: UIViewController {
     }
 
     static func instantiateWithXib() -> Self {
-        guard let vc = Self.init(nibName: Self.className, bundle: nil) as? Self else {
-            fatalError("Could not find View Controller named \(className)")
-        }
-        return vc
+        return Self.init(nibName: Self.className, bundle: nil)
     }
 }
 

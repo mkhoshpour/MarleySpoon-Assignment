@@ -59,7 +59,7 @@ class RecipeDetailViewController: UIViewController, Storyboarded {
             viewChef.isHidden = true
         }
         if let url = recipe?.photo?.url {
-            Service.loadImage(url: url) {[weak self] result in
+            RecipeService.loadImage(url: url) {[weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .success(let image):

@@ -17,7 +17,7 @@ class RecipeListViewModel {
 
     func getRecipes() {
         self.loading?(true)
-        Service.fetchRecipes { [weak self] result in
+        RecipeService.fetchRecipes { [weak self] result in
             guard let self = self else { return }
             self.loading?(false)
             switch result {

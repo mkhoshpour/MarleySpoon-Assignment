@@ -87,7 +87,7 @@ public final class Recipe: EntryDecodable, FieldKeysQueryable, Identifiable {
     }
 
     func getAllRecipes(result : @escaping RecipesResult) {
-        Service.fetchRecipes { response in
+        RecipeService.fetchRecipes { response in
             result(response)
         }
     }

@@ -17,7 +17,7 @@ class RecipeDetailViewModel {
 
     func getRecipe() {
         self.loading?(true)
-        Service.fetchRecipes(id: recipe.id, result: { [weak self] result in
+        RecipeService.fetchRecipes(id: recipe.id, result: { [weak self] result in
             guard let self = self else { return }
             self.loading?(false)
             switch result {

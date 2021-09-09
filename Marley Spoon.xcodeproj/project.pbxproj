@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0AE174B2D4C4B1A436A2799A /* Pods_Marley_Spoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC22FF32553E493B6E1FAAB7 /* Pods_Marley_Spoon.framework */; };
 		13B273B726E4B9FA00F7BBB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B273B626E4B9FA00F7BBB2 /* AppDelegate.swift */; };
-		13B273BB26E4B9FA00F7BBB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B273BA26E4B9FA00F7BBB2 /* ViewController.swift */; };
-		13B273BE26E4B9FA00F7BBB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B273BC26E4B9FA00F7BBB2 /* Main.storyboard */; };
 		13B273C026E4B9FC00F7BBB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B273BF26E4B9FC00F7BBB2 /* Assets.xcassets */; };
 		13B273C326E4B9FC00F7BBB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B273C126E4B9FC00F7BBB2 /* LaunchScreen.storyboard */; };
 		13B273CE26E4B9FC00F7BBB2 /* Marley_SpoonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B273CD26E4B9FC00F7BBB2 /* Marley_SpoonTests.swift */; };
@@ -56,8 +54,6 @@
 /* Begin PBXFileReference section */
 		13B273B326E4B9FA00F7BBB2 /* Marley Spoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marley Spoon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B273B626E4B9FA00F7BBB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		13B273BA26E4B9FA00F7BBB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		13B273BD26E4B9FA00F7BBB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13B273BF26E4B9FC00F7BBB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13B273C226E4B9FC00F7BBB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13B273C426E4B9FC00F7BBB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,8 +151,6 @@
 				13B273E726E4BC1400F7BBB2 /* Helpers */,
 				13B273B626E4B9FA00F7BBB2 /* AppDelegate.swift */,
 				13B2740526E6444100F7BBB2 /* AppCoordinator.swift */,
-				13B273BA26E4B9FA00F7BBB2 /* ViewController.swift */,
-				13B273BC26E4B9FA00F7BBB2 /* Main.storyboard */,
 				13B273BF26E4B9FC00F7BBB2 /* Assets.xcassets */,
 				13B273C126E4B9FC00F7BBB2 /* LaunchScreen.storyboard */,
 				13B273C426E4B9FC00F7BBB2 /* Info.plist */,
@@ -414,7 +408,6 @@
 				13B273FE26E6106F00F7BBB2 /* RecipeCell.xib in Resources */,
 				13B2741B26E7520100F7BBB2 /* TagCell.xib in Resources */,
 				13B273C026E4B9FC00F7BBB2 /* Assets.xcassets in Resources */,
-				13B273BE26E4B9FA00F7BBB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +493,6 @@
 			files = (
 				13B2740626E6444100F7BBB2 /* AppCoordinator.swift in Sources */,
 				13B2740E26E741BD00F7BBB2 /* RecipeDetailViewModel.swift in Sources */,
-				13B273BB26E4B9FA00F7BBB2 /* ViewController.swift in Sources */,
 				13B273E926E4BC3700F7BBB2 /* Service.swift in Sources */,
 				13B273B726E4B9FA00F7BBB2 /* AppDelegate.swift in Sources */,
 				13B273FD26E6106F00F7BBB2 /* RecipeCell.swift in Sources */,
@@ -550,14 +542,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		13B273BC26E4B9FA00F7BBB2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13B273BD26E4B9FA00F7BBB2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		13B273C126E4B9FC00F7BBB2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -732,7 +716,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DJQ677PUJJ;
-				INFOPLIST_FILE = "/Users/majidkhoshpour/Documents/iOS Projects/Marley Spoon/Marley Spoon/Marley Spoon/Marley SpoonTests/Info.plist";
+				INFOPLIST_FILE = "$(SOURCE_ROOT)/Marley Spoon/Marley SpoonTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -754,7 +738,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DJQ677PUJJ;
-				INFOPLIST_FILE = "/Users/majidkhoshpour/Documents/iOS Projects/Marley Spoon/Marley Spoon/Marley Spoon/Marley SpoonTests/Info.plist";
+				INFOPLIST_FILE = "$(SOURCE_ROOT)/Marley Spoon/Marley SpoonTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

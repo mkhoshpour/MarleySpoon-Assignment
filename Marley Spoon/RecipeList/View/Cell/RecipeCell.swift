@@ -24,7 +24,7 @@ class RecipeCell: UITableViewCell {
     func configureCellWith(_ item: Recipe) {
         labelRecipeName.text = item.title
         if let url = item.photo?.url {
-            Service.loadImage(url: url) {[weak self] result in
+            RecipeService.loadImage(url: url) {[weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .success(let image):
